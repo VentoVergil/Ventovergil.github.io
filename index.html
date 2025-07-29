@@ -3,112 +3,163 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name | Data Scientist</title>
+  <title>Your Name | Data Scientist Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0; padding: 0;
+      margin: 0;
+      padding: 0;
       background-color: #121212;
-      color: #fff;
+      color: #f5f5f5;
     }
+
     header {
-      background-image: url('https://images.unsplash.com/photo-1526378722627-8b1eb6b6c55a');
-      background-size: cover;
-      background-position: center;
-      color: #fff;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url('https://images.unsplash.com/photo-1526378722627-8b1eb6b6c55a') no-repeat center center/cover;
+      text-align: center;
       padding: 60px 20px;
-      text-align: center;
-    }
-    header h1 { margin: 0; font-size: 2.8em; }
-    header p { font-size: 1.2em; }
-    nav {
-      background-color: #34495e;
-      text-align: center;
-      padding: 10px;
-    }
-    nav a {
       color: #fff;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
     }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.8em;
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: #ffcc70;
+    }
+
+    nav {
+      background-color: #1f1f1f;
+      text-align: center;
+      padding: 12px 0;
+    }
+
+    nav a {
+      color: #f5f5f5;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
     section {
       max-width: 1000px;
       margin: 40px auto;
       padding: 0 20px;
     }
+
     h2 {
-      color: #2c3e50;
-      border-bottom: 2px solid #ddd;
+      border-bottom: 2px solid #333;
       padding-bottom: 10px;
+      color: #ffa500;
     }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 20px;
+    }
+
     .project {
-      margin-bottom: 30px;
+      background-color: #1e1e1e;
+      padding: 20px;
+      border-radius: 10px;
+      transition: transform 0.2s;
     }
+
+    .project:hover {
+      transform: scale(1.02);
+    }
+
+    .project img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
     .project h3 {
-      margin-bottom: 5px;
+      margin-top: 0;
     }
+
+    .github-button {
+      display: inline-block;
+      margin-top: 10px;
+      background-color: #ff8c42;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .github-button i {
+      margin-left: 8px;
+    }
+
+    .skills-used {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    .platform-icons img {
+      height: 30px;
+      margin-right: 10px;
+    }
+
     .skills ul {
       list-style: none;
       padding: 0;
       display: flex;
       flex-wrap: wrap;
     }
+
     .skills li {
-      background: #ecf0f1;
+      background: #2b2b2b;
+      color: #fff;
       margin: 8px;
-      padding: 12px 18px;
+      padding: 10px 16px;
       border-radius: 5px;
       display: flex;
       align-items: center;
       gap: 10px;
     }
-    .skills i {
-      font-size: 1.2em;
-      color: #2980b9;
-    }
+
     footer {
       text-align: center;
       padding: 20px;
       font-size: 0.9em;
       color: #888;
     }
-    .platform-icons img {
-      height: 30px;
-      margin-right: 10px;
-    }
-    a.button {
-      background-color: #888;
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 4px;
-    }
+
     .contact-icons {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 20px;
-}
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+    }
 
-.contact-icons a {
-  font-size: 2rem;
-  color: #2c3e50;
-  transition: color 0.3s ease;
-  text-decoration: none;
-}
+    .contact-icons a {
+      font-size: 2rem;
+      color: #ffcc70;
+      transition: color 0.3s ease;
+      text-decoration: none;
+    }
 
-.contact-icons a:hover {
-  color: #2980b9;
-}
+    .contact-icons a:hover {
+      color: #ffa500;
+    }
   </style>
 </head>
 <body>
 
-<header data-aos="fade-down">
-  <h1>EFFIONG EKPE</h1>
+<header>
+  <h1>Effiong Ekpe</h1>
   <p>Data Scientist | Machine Learning Enthusiast | Data Storyteller</p>
 </header>
 
@@ -119,112 +170,94 @@
   <a href="#contact">Contact</a>
 </nav>
 
-<section id="about" data-aos="fade-up">
+<section id="about">
   <h2>About Me</h2>
   <div class="platform-icons">
-    <a href="#"><img src="https://img.icons8.com/color/48/000000/python.png" alt="Python"></a>
-    <a href="#"><img src="https://img.icons8.com/color/48/000000/sql.png" alt="SQL"></a>
-    <a href="#"><img src="https://img.icons8.com/color/48/000000/power-bi.png" alt="Power BI"></a>
-    <a href="#"><img src="https://img.icons8.com/color/48/000000/google-analytics.png" alt="GA4"></a>
+    <img src="https://img.icons8.com/color/48/000000/python.png" alt="Python" />
+    <img src="https://img.icons8.com/color/48/000000/sql.png" alt="SQL" />
+    <img src="https://img.icons8.com/color/48/000000/power-bi.png" alt="Power BI" />
+    <img src="https://img.icons8.com/color/48/000000/google-analytics.png" alt="GA4" />
   </div>
-  <p>I am a Data Science graduate with 5+ years of experience transforming data into insights across healthcare, education, and research. From forecasting crop yields with ML to building mental health dashboards in Power BI, I combine strong Python and SQL skills with a passion for solving real-world problems. I thrive on using data to tell stories, drive impact, and build intelligent, practical solutions that can have real-world impacts.</p>
+<p>Hi there! I’m a Data Scientist who believes every dataset has a story and I’m here to make it talk. Whether I’m decoding climate patterns, building recommenders for songs based on “how sad is sad,” or wrangling web-scraped chaos into insight, I bring curiosity, clarity, and a bit of caffeine-fueled creativity to every project.</p>
+  <p>
+      I'm one part researcher and one part problem-solver with a drive for turning messy data into meaningful insights. I’m especially passionate about applying data science to real-world challenges in health, education, and human behavior.
+  </p></section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects-grid">
+
+     <div class="project">
+      <h3>Climate Impact on Crop Yields</h3>
+      <img src="Images/climate-crop.jpg" alt="Climate Forecasting" />
+      <p>Compared ARIMA and ML models like LSTM and Decision Trees to forecast crop yield under climate change scenarios in West Africa. Built to inform climate-aware policy decisions.</p>
+      <p class="skills-used"><strong>Skills:</strong> Deep Learning, Forecasting, Pandas, Regression, Data visualisation</p>
+      <a href="https://github.com/kkk/Examining-the-Impact-of-Climate-Change-on-Crop-Yields-in-West-Africa" class="github-button" target="_blank">View Code <i class="fab fa-github"></i></a>
+    </div>
+    
+    <div class="project">
+      <h3>Suicide Ideation Detection in Text</h3>
+      <img src="Images/suicide-text.jpg" alt="Suicide Ideation" />
+      <p>Used TF-IDF to vectorize social posts, then trained and evaluated Naive Bayes, Logistic Regression, and DL models to identify signs of suicidal ideation. Designed for early intervention.</p>
+      <p class="skills-used"><strong>Skills:</strong> TF-IDF, Naive Bayes, Deep Learning, Text classification, Natural Language Processing</p>
+      <a href="https://github.com/kkk/Detecting-Suicide-Ideation-in-Text-using-Machine-Learning" class="github-button" target="_blank">View Code <i class="fab fa-github"></i></a>
+    </div>
+
+    <div class="project">
+      <h3>Spotify Recommender: A Cosine Similarity Approach</h3>
+      <img src="Images/spotify.jpg" alt="Spotify Recommender" />
+      <p>Clustered my listening data into moods (sad, kinda sad, not sad), trained a classifier, and used cosine similarity to recommend new songs based on mood. It’s like a mood ring—but for bops.</p>
+      <p class="skills-used"><strong>Skills:</strong> KMeans, Pandas, Cosine Similarity, Web</p>
+      <a href="https://github.com/kkk/spotify-cosine-recommender" class="github-button" target="_blank">View Code <i class="fab fa-github"></i></a>
+    </div>
+    
+    <div class="project">
+      <h3>Female Protagonist Movie Analysis</h3>
+      <img src="Images/female-movie.jpg" alt="Movie Dashboard" />
+      <p>Explored ratings and earnings of 1,000+ films featuring female leads. Rotten Tomatoes loved them more than IMDb did. Visualized the gap in Python and Power BI.</p>
+      <p class="skills-used"><strong>Skills:</strong> Python, Power BI, Data Cleaning, Webscraping (Beautiful Soup)</p>
+      <a href="https://github.com/kkk/Female-movie-analysis-project" class="github-button" target="_blank">View Code <i class="fab fa-github"></i></a>
+    </div>
+
+    <div class="project">
+      <h3>Supply Chain OTIF Dashboard</h3>
+      <img src="Images/supplychain.jpg" alt="Supply Chain" />
+      <p>Built a Power BI dashboard to visualize OT%, IF%, and OTIF% service levels using DAX. Enabled real-time tracking and operational insights for FMCG logistics.</p>
+      <p class="skills-used"><strong>Skills:</strong> Power BI, DAX, KPIs</p>
+      <a href="https://github.com/kkk/CodeBasics-Challenge-2-Altiq_Supply-Chain" class="github-button" target="_blank">View Code <i class="fab fa-github"></i></a>
+    </div>
+
+  </div>
 </section>
 
-<section id="projects" data-aos="fade-up">
-  <h2>Featured Projects</h2>
-  <div class="project">
-    <h3>Examining The Impact Of Climate Change on West African Crop Yields</h3>
-    <img src="https://raw.githubusercontent.com/VentoVergil/Ventovergil.github.io/refs/heads/main/Images/pexels-pixabay-60013.jpg" alt="Project Screenshot" style="width:100%; border-radius:8px;" />
-    <p><i>A comparative forecasting and prediction study</i><br>
-Built a multi-model pipeline using ARIMA for time-series forecasting and machine learning models (Linear Regression, Decision Trees, and LSTM) to predict crop yields under changing climate scenarios. Assessed performance across methods to inform sustainable agricultural planning in West Africa.<br>
-    <a href="https://github.com/VentoVergil/Examining-the-Impact-of-Climate-Change-on-Crop-Yields-in-West-Africa" class="github-button" target="_blank"> View on Github
-  <i class="fab fa-github"></i>
-</a>
-  </div>
-  
-  <div class="project">
-    <h3>Empowering Early Intervention: Detecting Suicide Ideation In Text with Machine Learning</h3>
-    <img src="https://github.com/VentoVergil/Ventovergil.github.io/blob/main/Images/pexels-cottonbro-7319085.jpg" alt="Project Screenshot" style="width:100%; border-radius:8px;" />
-    <p><i>Natural language processing for mental health support</i><br>
-Developed a classifier to identify suicidal ideation in social media posts using TF-IDF vectorization. Trained and evaluated Naive Bayes, Logistic Regression, and Deep Learning models to compare performance, with a focus on precision and interpretability for sensitive applications. <br>
-    <a href="https://github.com/VentoVergil/Detecting-Suicide-Ideation-in-Text-using-Machine-Learning" class="github-button" target="_blank"> View on Github
-  <i class="fab fa-github"></i>
-  </a>
-  
-  <div class="project">
-    <h3>Spotify Music Recommender: A Cosine Similarity Approach</h3>
-    <img src="https://github.com/VentoVergil/Ventovergil.github.io/blob/main/Images/pexels-cottonbro-5077396.jpg" alt="Project Screenshot" style="width:100%; border-radius:8px;" />
-    <p><i>Clustering mood, predicting taste, and finding your next sad jam</i><br>
-Clustered my personal Spotify listening history into three moods "sad", "not sad", and "kinda sad" using KMeans. Trained a model on this dataset to classify new songs and used Cosine Similarity to recommend tracks from a Kaggle dataset based on mood-aligned features. <br>
-    <a href="https://github.com/VentoVergil/spotify-cosine-recommender" class="github-button" target="_blank"> View on Github
-  <i class="fab fa-github"></i>
-  </a>
- 
-<div class="project">
-    <h3>Female Protagonist Movie Analysis (Python & Power BI)</h3>
-    <img src="https://github.com/VentoVergil/Ventovergil.github.io/blob/main/Images/pexels-cottonbro-3945321.jpg" alt="Project Screenshot" style="width:100%; border-radius:8px;" />
-    <p><i>Visual storytelling meets gender in cinema</i><br>
-Analysed over 1,000+ films featuring female leads to explore differences in audience reception. Compared gross revenue, IMDb ratings, and Rotten Tomatoes scores revealing that female-led films were consistently rated higher by Rotten Tomatoes critics than IMDb users. Created interactive dashboards to visualise findings. <br>
-    <a href="https://github.com/VentoVergil/Female-movie-analysis-project" class="github-button" target="_blank"> View on Github
-  <i class="fab fa-github"></i>
-  </a>
- 
-  </div>
-  
-  <div class="project">
-    <h3>Power BI Supply Chain Dashboard</h3>
-    <img src="https://github.com/VentoVergil/Ventovergil.github.io/blob/main/Images/pexels-pixabay-262353.jpg" alt="Project Screenshot" style="width:100%; border-radius:8px;" />
-    <p><i>Operational insights through DAX-powered metrics</i><br>
-   Designed a dynamic Power BI dashboard for an FMCG scenario to track On-Time, In-Full (OTIF) delivery metrics using custom DAX measures. Enabled daily service-level monitoring and strategic decision-making by visualising OT%, IF%, and OTIF% trends across customers and delivery windows.<br>
-  <a href="https://github.com/VentoVergil/CodeBasics-Challenge-2-Altiq_Supply-Chain" class="github-button" target="_blank"> View on Github
-  <i class="fab fa-github"></i>
-  </a>
-  </div>
-  
-</section>
-
-<section id="skills" class="skills" data-aos="fade-up">
+<section id="skills" class="skills">
   <h2>Skills</h2>
   <ul>
-  <li><i class="fab fa-python"></i>Python</li>
-  <li><i class="fas fa-database"></i>SQL</li>
-  <li><img src="https://img.icons8.com/color/48/pandas.png" alt="Pandas" width="20">Pandas</li>
-  <li><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="Scikit-learn" width="20">Scikit-learn</li>
-  <li><i class="fas fa-project-diagram"></i>Machine Learning</li>
-  <li><i class="fas fa-chart-line"></i>Power BI</li>
-  <li><img src="https://img.icons8.com/?size=100&id=jH4BpkMnRrU5&format=png&color=000000" alt="PyTorch" width="20">PyTorch</li>
-  <li><i class="fas fa-code"></i>TensorFlow</li>
-  <li><i class="fas fa-brain"></i>Deep Learning</li>
-  <li><img src="https://img.icons8.com/color/48/000000/git.png" alt="Git" width="20">Git</li>
-  <li><img src="https://img.icons8.com/?size=100&id=lOqoeP2Zy02f&format=png&color=000000" alt="Jupyter" width="20">Google Colab</li>
-  <li><img src="https://img.icons8.com/?size=100&id=J0SgMWzAxqFj&format=png&color=000000" alt="Jupyter" width="20">Jupyter Notebooks</li>
-  <li><i class="fas fa-vial"></i>Data Cleaning</li>
-
-</ul>
-
+    <li><i class="fab fa-python"></i>Python</li>
+    <li><i class="fas fa-database"></i>SQL</li>
+    <li><img src="https://img.icons8.com/color/48/pandas.png" alt="Pandas" width="20" />Pandas</li>
+    <li><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="Scikit-learn" width="20" />Scikit-learn</li>
+    <li><img src="https://img.icons8.com/color/48/000000/power-bi.png" alt="Power BI" width="20" />Power BI</li>
+    <li><img src="https://img.icons8.com/?size=100&id=jH4BpkMnRrU5&format=png&color=000000" alt="PyTorch" width="20" />PyTorch</li>
+    <li><i class="fas fa-code"></i>TensorFlow</li>
+    <li><i class="fas fa-brain"></i>Deep Learning</li>
+    <li><img src="https://img.icons8.com/color/48/000000/git.png" alt="Git" width="20" />Git</li>
+    <li><img src="https://img.icons8.com/?size=100&id=J0SgMWzAxqFj&format=png&color=000000" alt="Jupyter" width="20" />Jupyter Notebooks</li>
+  </ul>
 </section>
 
 <section id="contact">
   <h2>Contact</h2>
   <div class="contact-icons">
-    <a href="effiongekpee@gmail.com" title="Email">
-      <i class="fas fa-envelope"></i>
-    </a>
-    <a href="https://linkedin.com/in/effiongekpee/" target="_blank" title="LinkedIn">
-      <i class="fab fa-linkedin"></i>
-    </a>
-    <a href="https://github.com/VentoVergil" target="_blank" title="GitHub">
-      <i class="fab fa-github"></i>
-    </a>
+    <a href="mailto:effiongekpee@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+    <a href="https://linkedin.com/in/effiongekpee" title="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://VentoVergil.com/kkk" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
   </div>
 </section>
 
 <footer>
   <p>&copy; 2025 Your Name. All rights reserved.</p>
 </footer>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init();</script>
 
 </body>
 </html>
